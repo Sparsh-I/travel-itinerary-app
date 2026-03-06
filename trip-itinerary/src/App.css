@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+:root {
+  --font: 'Space Grotesk', sans-serif;
+
+  /* colour palette */
+  --primary-colour: #74E8C5;
+  --primary-colour-alt: #4FB697;
+  --secondary-colour: #3C3C3C;
+  --secondary-colour-alt: #252525;
+  --background-colour: #F8F8F8;
+  --background-colour-alt: #A0A0A0;
 }
 
 .logo {
@@ -39,4 +53,34 @@
 
 .read-the-docs {
   color: #888;
+}
+
+#header ul {
+  display: flex;
+  list-style: none;      /* removes bullet points */
+  gap: 2rem;             /* space between items */
+  padding: 0;
+  margin: 0;
+}
+
+#header li {
+  cursor: pointer;
+  color: var(--primary-colour);
+}
+
+.h1-text {
+  color: var(--secondary-colour);
+
+  font-family: var(--font), sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.white-label {
+  background: var(--background-colour);
+  border-radius: 10px;
+  align-items: center;
+  padding: 0 10px;
 }
