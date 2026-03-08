@@ -1,0 +1,106 @@
+:root {
+    --datepicker_start-background: linear-gradient(
+        90deg,
+        transparent 50%,
+        var(--primary-colour-alt2) 50%);
+    --datepicker_end-background: linear-gradient(
+        90deg,
+        var(--primary-colour-alt2) 50%,
+        transparent 50%)
+}
+
+.date-range-picker-input {
+    position: relative;
+    display: inline-block;
+    justify-content: center;
+}
+
+.date-range-picker-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    background: var(--background-colour);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    margin-top: 4px;
+}
+
+button:hover {
+    border-color: var(--primary-colour-alt);
+}
+
+.rdp-selected {
+    font-weight: normal;
+    font-size: medium;
+}
+
+.rdp-day_button[aria-selected="true"] {
+    background-color: #74E8C5;
+    color: #3C3C3C;
+}
+
+.rdp-range_middle {
+    background-color: var(--primary-colour-alt2);
+
+    .rdp-day_button {
+        color: var(--secondary-colour);
+        border: var(--primary-colour-alt);
+        border-radius: 50%;
+        background-color: transparent;
+    }
+}
+
+/* Days in between the range */
+.rdp-day_range_middle {
+    background-color: var(--primary-colour-alt2);
+
+    .rdp-day_button {
+        background-color: var(--primary-colour-alt2);
+        color: #3C3C3C;
+    }
+}
+
+.rdp-day_button:hover {
+    background-color: var(--primary-colour-alt) !important;
+    color: var(--background-colour) !important;
+}
+
+.rdp-day_button {
+    color: var(--secondary-colour);
+}
+
+.rdp-month_caption, .rdp-weekday {
+    color: var(--secondary-colour);
+}
+
+/* Nav buttons */
+.rdp-button_previous, .rdp-button_next {
+    color: var(--secondary-colour);
+}
+
+.rdp-range_start {
+    background: var(--datepicker_start-background);
+    color: white;
+    .rdp-day_button {
+        background-color: var(--primary-colour-alt);
+        border-color: var(--primary-colour-alt);
+    }
+}
+
+.rdp-range_end {
+    background: var(--datepicker_end-background);
+    color: white;
+    .rdp-day_button {
+        background-color: var(--primary-colour-alt);
+        border-color: var(--primary-colour-alt);
+    }
+}
+
+.rdp-caption_label {
+    padding: 13px
+}
+
+.rdp-chevron {
+    fill: var(--primary-colour-alt)
+}
