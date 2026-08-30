@@ -8,7 +8,7 @@ import NewTripPage from "./pages/trips_pages/NewTripPage.tsx";
 import SignUpPage from "./pages/start_pages/SignUpPage.tsx";
 
 import "./styles/App.css";
-import { Route, Routes } from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import LandingPage from "./pages/start_pages/LandingPage.tsx";
 import ProtectedRoute from "./components/global/ProtectedRoute.tsx";
 import { supabase } from "./utils/SupabaseClient.ts";
@@ -62,8 +62,8 @@ export default function App() {
 
     function homeRoute() {
         if (!loggedIn) return <LandingPage/>;
-        if (loggedIn && !profileComplete) return <ProtectedRoute><SignUpPage/></ProtectedRoute>;
-        return <ProtectedRoute><HomePage/></ProtectedRoute>;
+        if (!profileComplete) return <ProtectedRoute><SignUpPage/></ProtectedRoute>;
+        return <Navigate to="/home" replace/>;
     }
 
     return (
